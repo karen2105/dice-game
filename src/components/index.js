@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import UserSelect from "@/components
-/user-selection";
+import UserSelect from "@/components/user-selection";
 import Game from "@/containers/game";
 import Goodbye from "@/components/goodbye";
 //import './style/main.css';
 
-import 
+import {
   BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
+  Route
 } from 'react-router-dom';
 
 class App extends Component {
@@ -21,6 +17,10 @@ class App extends Component {
           <Route exact={true} path="/" component={UserSelect} />
           <Route path="/game" component={Game} />
           <Route path="/goodbye" component={Goodbye} />
+
+          <footer>
+            <strong>Karen Lorena Alonso Zarate - 2018</strong>
+          </footer>
         </React.Fragment>
       </Router>
     );

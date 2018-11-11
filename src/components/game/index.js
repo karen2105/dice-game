@@ -15,7 +15,7 @@ function createBoards(numberOfPlayers) {
 const Game = ({numberOfPlayers}) => {
   return (
     <div className="dice-game-wrapper">
-      <h2>Dices game</h2>
+      <h1>Dices game</h1>
       {createBoards(numberOfPlayers)}
       <div>
         <h2>Do you want to play again?</h2>

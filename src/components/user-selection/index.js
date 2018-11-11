@@ -13,6 +13,7 @@ export default class UserSelection extends Component {
 
   handleSubmit(event) {
     store.dispatch(setNumberOfPlayers(this.inputNumberOfPlayers.current.value));
+    this.props.history.push('/game');
     event.preventDefault(); 
   }
 
@@ -43,12 +44,8 @@ export default class UserSelection extends Component {
               required
             />
           </label>
-          <button type="button">Set</button>
+          <button type="submit">Start playing!!</button>
         </form>
-
-        <Link to="/game">
-          <button type="submit">Start playing!</button>
-        </Link>
       </div>
     );
   }
