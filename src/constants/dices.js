@@ -1,0 +1,1 @@
+export const DICE = ["A", "K", "Q", "10", "9"];
