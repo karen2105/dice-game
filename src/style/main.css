@@ -1,0 +1,93 @@
+body {
+  font-family: 'Helvetica';
+  font-size: 16px;
+  margin: 0;
+}
+
+button {
+  min-width: 100px;
+  padding: 5px 20px;
+  margin: 5px 10px;
+  background: #e24562;
+  border: 1px solid #e24562;
+  border-radius: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #d03955; 
+}
+
+#root {
+  position: relative;
+  padding-bottom: 20px;
+  min-height: calc(100vh - 50px);
+}
+
+.dice-game-wrapper {
+  margin: 0 2rem;
+}
+
+.dices-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.dice {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: inset 1px -3px 8px 1px rgba(0,0,0,0.1);
+}
+.player-identifier {
+  color: white;
+}
+
+.hand-name-container {
+  align-self: flex-start;
+  margin: 5px 0;
+  padding: 5px 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background: transparent;
+  box-shadow: inset 1px -3px 8px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.individual-board-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid lightgray;
+}
+
+.individual-board {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  padding: 10px 20px;
+  margin: 10px 20px 20px 0;
+  border-radius: 10px;
+  border: 2px solid #E1D193;
+  background-color: #076324;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer {
+  font-size: 10px;
+}

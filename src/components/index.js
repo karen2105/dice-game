@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserSelect from "@/components/user-selection";
 import Game from "@/containers/game";
 import Goodbye from "@/components/goodbye";
-//import './style/main.css';
+import '@/style/main.css';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +19,7 @@ class App extends Component {
           <Route path="/goodbye" component={Goodbye} />
 
           <footer>
-            <strong>Karen Lorena Alonso Zarate - 2018</strong>
+            <span className="footer">Karen Lorena Alonso Zarate - 2018</span>
           </footer>
         </React.Fragment>
       </Router>

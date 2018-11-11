@@ -85,13 +85,15 @@ function getHandName(hand) {
   return `Your highest card is ${DICE[counterCards.indexOf(1)]}`;
 }
 
-const IndividualBoard = ({}) => {
+const IndividualBoard = ({playerNumber}) => {
   const individualBoard = createDices();
   return (
     <div className="individual-board">
-      {individualBoard.dices}
-      <div>
-        {getHandName(individualBoard.hand)}
+      <div className="hand-name-container">
+        Player {playerNumber}: {getHandName(individualBoard.hand)}
+      </div>
+      <div className="dices-container">
+        {individualBoard.dices}
       </div>
     </div>
   );

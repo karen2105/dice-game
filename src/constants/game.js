@@ -1,0 +1,1 @@
+export const SET_HAND = 'SET_HAND';
