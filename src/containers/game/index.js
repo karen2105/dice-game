@@ -4,14 +4,8 @@ import Game from "@/components/game";
 
 function mapStateToProps(state) {
   return {
-    numberOfPlayers: state.getIn(['configuration', 'numberOfPlayers'])
+    numberOfPlayers: state.getIn(['configuration', 'numberOfPlayers']),
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    //onSubmit: (numberOfPlayers) => dispatch(setnumberOfPlayers(numberOfPlayers)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Game)
+export default connect(mapStateToProps)(Game)

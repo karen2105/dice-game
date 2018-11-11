@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import UserSelect from "@/containers/user-selection";
+import UserSelect from "@/components
+/user-selection";
 import Game from "@/containers/game";
-//import Goodbye from "@/containers/goodbye";
+import Goodbye from "@/components/goodbye";
 //import './style/main.css';
 
-import {
+import 
   BrowserRouter as Router,
   Route,
   Link,
@@ -19,6 +20,7 @@ class App extends Component {
         <React.Fragment>
           <Route exact={true} path="/" component={UserSelect} />
           <Route path="/game" component={Game} />
+          <Route path="/goodbye" component={Goodbye} />
         </React.Fragment>
       </Router>
     );

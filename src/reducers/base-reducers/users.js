@@ -7,7 +7,7 @@ const initialState = Map({
 
 export default function users(state = initialState, action) {
   switch(action.type) {
-    case actionType.SET_NUMBER_OF_USERS:
+    case actionType.SET_NUMBER_OF_PLAYERS:
       return state.set('numberOfPlayers', action.numberOfPlayers);
     default:
       return state;

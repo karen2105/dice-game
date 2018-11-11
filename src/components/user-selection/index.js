@@ -1,24 +1,18 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import store from "@/store";
-import { setnumberOfPlayers } from "@/actions/user-selection";
+import { setNumberOfPlayers } from "@/actions/user-selection";
 
 export default class UserSelection extends Component {
   constructor(props) {
     super(props);
 
-    this.inputnumberOfPlayers = React.createRef();
+    this.inputNumberOfPlayers = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    store.dispatch(setnumberOfPlayers(this.inputnumberOfPlayers.current.value));
+    store.dispatch(setNumberOfPlayers(this.inputNumberOfPlayers.current.value));
     event.preventDefault(); 
   }
 
@@ -26,14 +20,20 @@ export default class UserSelection extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Name of game here</h1>
+          <h1>Pre-selection Test</h1>
         </header>
         <h2>Instructions</h2>
+        <p>
+          Each Poker dice have six sides, one each of an Ace, King, Queen, Jack, 10, and 9. 
+          These are used to form a poker hand. 
+          Each player can roll the dice up to 3 times trying to get a better hand.
+          After the players have rolled the dice, wins the one with better hand.
+        </p>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Select number of users:
+            Select number of players:
             <input 
-              ref={this.inputnumberOfPlayers}
+              ref={this.inputNumberOfPlayers}
               type="number"
               maxLength="1"
               autoComplete="off"
@@ -43,9 +43,12 @@ export default class UserSelection extends Component {
               required
             />
           </label>
-          <Link to="/game">HTML</Link>
-          <button type="button"> Start playing!</button>
+          <button type="button">Set</button>
         </form>
+
+        <Link to="/game">
+          <button type="submit">Start playing!</button>
+        </Link>
       </div>
     );
   }

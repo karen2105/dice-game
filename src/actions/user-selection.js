@@ -1,8 +1,8 @@
 import * as actionType from '@/constants/user-selection';
 
-export function setnumberOfPlayers(numberOfPlayers) {
+export function setNumberOfPlayers(numberOfPlayers) {
   return {
-    type: actionType.SET_NUMBER_OF_USERS, 
+    type: actionType.SET_NUMBER_OF_PLAYERS, 
     numberOfPlayers
   }
 }

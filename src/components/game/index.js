@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { DICE } from '@/constants/dices';
+import IndividualBoard from '@/components/game/individual-board';
 import store from '@/store';
 
-function getValuesForDices() {
-  const min = 0;
-  const max = 5;
+function createBoards(numberOfPlayers) {
+  let boards = [];
 
-  return Math.floor(Math.random() * (max - min)) + min;
+  for (let i = 0; i < numberOfPlayers; i++) {
+    boards.push(<IndividualBoard key={`${i}-board`}/>);
+  }
+  return boards;
 }
 
-export default class Game extends Component {
-  constructor(props) {
-    super(props);
-  }
-
- 
-  render() {
-    const  numberofPlayers
-    return (
-      <div className="dice-game-wrapper">
-        {this.props.numberOfPlayers}
-        {DICE[getValuesForDices()]}
-
+const Game = ({numberOfPlayers}) => {
+  return (
+    <div className="dice-game-wrapper">
+      <h2>Dices game</h2>
+      {createBoards(numberOfPlayers)}
+      <div>
+        <h2>Do you want to play again?</h2>
+        <Link to='/'><button>Yes</button></Link>
+        <Link to='/goodbye'><button>No</button></Link>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
+export default Game;
