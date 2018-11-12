@@ -20,19 +20,6 @@ function getValuesForDices() {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function createDices() {
-  let dices = [];
-  let hand = [];
-
-  for (let i = 0; i < 5; i++) {
-    const card = DICE[getValuesForDices()];
-    dices.push(<Dice key={`${i}-dice`} card={card}/>);
-    hand.push(card);
-  }
-
-  return {dices, hand};
-}
-
 function howManyTimes(array, numberToCount) {
   return array.map(value => value === numberToCount).filter(Boolean).length;
 }
@@ -85,12 +72,27 @@ function getHandName(hand) {
   return `Your highest card is ${DICE[counterCards.indexOf(1)]}`;
 }
 
+function createDices() {
+  let dices = [];
+  let hand = [];
+
+  for (let i = 0; i < 5; i++) {
+    const card = DICE[getValuesForDices()];
+    dices.push(<Dice key={`${i}-dice`} card={card}/>);
+    hand.push(card);
+  }
+
+  hand = getHandName(hand);
+
+  return {dices, hand};
+}
+
 const IndividualBoard = ({playerNumber}) => {
   const individualBoard = createDices();
   return (
     <div className="individual-board">
       <div className="hand-name-container">
-        Player {playerNumber}: {getHandName(individualBoard.hand)}
+        Player {playerNumber}: {individualBoard.hand}
       </div>
       <div className="dices-container">
         {individualBoard.dices}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Goodbye = () => {
   return (
-    <div className="dice-game-wrapper">
+    <div className="dice-game-wrapper thanks">
       Thanks!
     </div>
   );

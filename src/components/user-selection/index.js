@@ -19,21 +19,21 @@ export default class UserSelection extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="dice-game-wrapper">
         <header className="App-header">
           <h1>Pre-selection Test</h1>
         </header>
         <h2>Instructions</h2>
         <p>
-          Each Poker dice have six sides, one each of an Ace, King, Queen, Jack, 10, and 9. 
-          These are used to form a poker hand. 
-          Each player can roll the dice up to 3 times trying to get a better hand.
-          After the players have rolled the dice, wins the one with better hand.
+          Each Poker dice have six sides, on each side there is one of the following Ace, King, Queen, Jack, 10, and 9. 
+          These are used to form a Poker hand. Each player can roll up to 3 times. 
+          After the players have rolled the dice, the one with the best hand wins wins.
         </p>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Select number of players:
+          <label className="label-select-number-players">
+            Select the amount of players
             <input 
+              className="input-select-number-players"
               ref={this.inputNumberOfPlayers}
               type="number"
               maxLength="1"
