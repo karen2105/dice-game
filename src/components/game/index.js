@@ -7,7 +7,7 @@ function createBoards(numberOfPlayers) {
   let boards = [];
 
   for (let i = 0; i < numberOfPlayers; i++) {
-    boards.push(<IndividualBoard key={`${i}-board`} playerNumber={i + 1}/>);
+    boards.push(<IndividualBoard key={`${i}-board`} playerNumber={i + 1} />);
   }
   return boards;
 }
@@ -21,8 +21,8 @@ const Game = ({numberOfPlayers}) => {
       </div>
       <div>
         <h2>Do you want to play again?</h2>
-        <Link to='/'><button>Yes</button></Link>
-        <Link to='/goodbye'><button>No</button></Link>
+        <Link to='/'><button className="primary">Yes</button></Link>
+        <Link to='/goodbye'><button className="primary">No</button></Link>
       </div>
     </div>
   );

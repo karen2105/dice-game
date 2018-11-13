@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { 
   DICE, 
@@ -12,6 +12,8 @@ import {
   BUST
 } from '@/constants/dices';
 import Dice from '@/components/game/dice';
+import store from "@/store";
+import { setDicesAndHand, modifyDicesAndHand } from "@/actions/game";
 
 function getValuesForDices() {
   const min = 0;
@@ -73,32 +75,90 @@ function getHandName(hand) {
 }
 
 function createDices() {
-  let dices = [];
+  let dicesComp = [];
   let hand = [];
 
   for (let i = 0; i < 5; i++) {
     const card = DICE[getValuesForDices()];
-    dices.push(<Dice key={`${i}-dice`} card={card}/>);
+    dicesComp.push(<Dice key={`${i}-dice`} card={card}/>);
     hand.push(card);
   }
 
-  hand = getHandName(hand);
+  const handName = getHandName(hand);
 
-  return {dices, hand};
+  return {dicesComp, handName, hand};
 }
 
-const IndividualBoard = ({playerNumber}) => {
-  const individualBoard = createDices();
-  return (
-    <div className="individual-board">
-      <div className="hand-name-container">
-        Player {playerNumber}: {individualBoard.hand}
-      </div>
-      <div className="dices-container">
-        {individualBoard.dices}
-      </div>
-    </div>
-  );
+function rollAgain() {
+  let dicesComp = [];
+  let hand = [];
+
+  for (let i = 0; i < 5; i++) {
+    const card = DICE[getValuesForDices()];
+    dicesComp.push(<Dice key={`${i}-dice`} card={card}/>);
+    hand.push(card);
+  }
+
+  const handName = getHandName(hand);
+
+  return {dicesComp, handName, hand};
 }
 
-export default IndividualBoard;
+function createDicesAndSaveToStore(playerNumber) {
+  const dicesForBoard = createDices();
+  store.dispatch(setDicesAndHand(dicesForBoard.hand, dicesForBoard.handName, playerNumber));
+
+  return dicesForBoard;
+}
+
+function modifyDicesAndSaveToStore(playerNumber) {
+  const dicesForBoard = createDices();
+  store.dispatch(modifyDicesAndHand(dicesForBoard.hand, dicesForBoard.handName, playerNumber));
+
+  return dicesForBoard;
+}
+
+export default class IndividualBoard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { 
+      individualBoard: createDicesAndSaveToStore(this.props.playerNumber),
+      counter: 0,
+    };
+
+    this.handleRollAgain = this.handleRollAgain.bind(this);
+  }
+
+  handleRollAgain(e, playerNumber) {
+    this.setState({
+      individualBoard: modifyDicesAndSaveToStore(playerNumber),
+      counter: this.state.counter + 1,
+    });
+  }
+
+  render() {
+    const { playerNumber } = this.props;
+    const isButtonDisabled = this.state.counter < 3 ? false : true;
+
+    return (
+      <div className="individual-board">
+        <div className="ib-header-wrapper">
+          <div className="hand-name-container">
+            Player {playerNumber}: {this.state.individualBoard.handName}
+          </div>
+          <button
+            className="secondary"
+            onClick={(e) => this.handleRollAgain(e, playerNumber)}
+            disabled={isButtonDisabled}
+          >
+            Roll again
+          </button>
+        </div>
+        <div className="dices-container">
+          {this.state.individualBoard.dicesComp}
+        </div>
+      </div>
+    );
+  }
+}

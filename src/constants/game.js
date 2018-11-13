@@ -1,1 +1,2 @@
-export const SET_HAND = 'SET_HAND';
+export const SET_DICES_AND_HAND = 'SET_DICES_AND_HAND';
+export const MODIFY_DICES_AND_HAND = 'MODIFY_DICES_AND_HAND';

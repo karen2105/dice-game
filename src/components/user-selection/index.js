@@ -44,7 +44,7 @@ export default class UserSelection extends Component {
               required
             />
           </label>
-          <button type="submit">Start playing!!</button>
+          <button className="primary" type="submit">Start playing!!</button>
         </form>
       </div>
     );

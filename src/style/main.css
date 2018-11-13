@@ -4,7 +4,7 @@ body {
   margin: 0;
 }
 
-button {
+button.primary {
   min-width: 100px;
   padding: 5px 20px;
   margin: 5px 10px;
@@ -17,9 +17,32 @@ button {
   transition: background ease 300ms;
 }
 
-button:hover {
+button.primary:hover {
   cursor: pointer;
   background: #d03955; 
+}
+
+button.secondary {
+  height: 30px;
+  padding: 2px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  transition: background ease 300ms;
+}
+
+button:hover.secondary {
+  cursor: pointer;
+  background: rgba(255,255,255,0.2); 
+}
+
+button:disabled.secondary {
+  cursor: default !important;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.2);
 }
 
 #root {
@@ -85,6 +108,12 @@ form {
   background: transparent;
   box-shadow: inset 1px -3px 8px 1px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+}
+
+.ib-header-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .individual-board-wrapper {
