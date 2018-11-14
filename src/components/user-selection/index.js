@@ -27,7 +27,7 @@ export default class UserSelection extends Component {
         <p>
           Each Poker dice have six sides, on each side there is one of the following Ace, King, Queen, Jack, 10, and 9. 
           These are used to form a Poker hand. Each player can roll up to 3 times. 
-          After the players have rolled the dice, the one with the best hand wins wins.
+          After the players have rolled the dice, the one with the best hand wins.
         </p>
         <form onSubmit={this.handleSubmit}>
           <label className="label-select-number-players">
