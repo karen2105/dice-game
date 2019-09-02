@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <Route exact={true} path="/" component={UserSelect} />
+          <Route exact path="/" component={UserSelect} />
           <Route path="/game" component={Game} />
           <Route path="/goodbye" component={Goodbye} />
 

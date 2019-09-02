@@ -1,11 +1,11 @@
 {
   "name": "itvet-alonso",
   "version": "1.0.0",
-  "description": "Test to apply to the Junior front-end role.",
+  "description": "Karen Alonso - 2018.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --watch --no-inline",
+    "start": "webpack-dev-server --mode development --watch",
     "build": "webpack --mode production"
   },
   "keywords": [
