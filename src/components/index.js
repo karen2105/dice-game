@@ -6,22 +6,25 @@ import '@/style/main.css';
 
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <React.Fragment>
-          <Route exact path="/" component={UserSelect} />
-          <Route path="/game" component={Game} />
-          <Route path="/goodbye" component={Goodbye} />
+        <Switch>
+          <React.Fragment>
+            <Route exact path="/" component={UserSelect} />
+            <Route path="/game" component={Game} />
+            <Route path="/goodbye" component={Goodbye} />
 
-          <footer>
-            <span className="footer">Karen Lorena Alonso Zarate - 2018</span>
-          </footer>
-        </React.Fragment>
+            <footer>
+              <span className="footer">Karen Lorena Alonso Zarate - 2018</span>
+            </footer>
+          </React.Fragment>
+        </Switch>
       </Router>
     );
   }

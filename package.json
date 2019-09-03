@@ -1,6 +1,5 @@
 {
   "name": "itvet-alonso",
-  "version": "1.0.0",
   "description": "Karen Alonso - 2018.",
   "main": "index.js",
   "scripts": {
@@ -22,9 +21,9 @@
     "babel-plugin-root-import": "^6.1.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^1.0.1",
+    "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.0.0",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
@@ -33,8 +32,8 @@
     "immutable": "^4.0.0-rc.12",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-redux": "^5.1.0",
-    "react-router-dom": "^4.3.1",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
     "redux": "^4.0.1",
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.3.0"
