@@ -5,7 +5,6 @@ import { setNumberOfPlayers } from "@/actions/user-selection";
 
 export default class UserSelection extends Component {
   constructor(props) {
-    super(props);
 
     this.inputNumberOfPlayers = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +28,7 @@ export default class UserSelection extends Component {
           These are used to form a Poker hand. Each player can roll up to 3 times. 
           After the players have rolled the dice, the one with the best hand wins.
         </p>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label className="label-select-number-players">
             Select the amount of players
             <input 
